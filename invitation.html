@@ -194,7 +194,7 @@ div.desc {
               
     </section>
 
-    <p id="placeholderContent">
+    <article id="placeholderContent">
         Hello <span id="recipientName1">recipientName</span>!
         <br/>
         <br/> You have been invited to volunteer for an event held by <span id="organizationName1">organizationName</span> on <span id="eventDate1">eventDate</span>. Please come to the following website: <span id="websiteURL1">websiteURL</span> to sign up as a volunteer.
@@ -203,7 +203,8 @@ div.desc {
         <br/>
         <br/>
         <span id="hostName1">hostName</span>
-    </p>
+    </article>
+    
          <script>            
         var txt1 = document.getElementById("recipientName");
         var txt2 = document.getElementById("organizationName");
@@ -225,9 +226,9 @@ div.desc {
             out4.innerHTML = txt4.value;
             out5.innerHTML = txt5.value;
          }    
-       btn.addEventListener('click', fill);
-        
+       btn.addEventListener('click', fill);   
     </script>
+    
     <footer>This events site is for IT-FP3215 tasks.
     </footer>
 </body>
