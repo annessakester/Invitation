@@ -191,8 +191,20 @@ div.desc {
 
             <input type="submit" id="btn" value="Submit">
         </form>
-        
-     <script>            
+              
+    </section>
+
+    <p id="placeholderContent">
+        Hello <span id="recipientName1">recipientName</span>!
+        <br/>
+        <br/> You have been invited to volunteer for an event held by <span id="organizationName1">organizationName</span> on <span id="eventDate1">eventDate</span>. Please come to the following website: <span id="websiteURL1">websiteURL</span> to sign up as a volunteer.
+        <br/>
+        <br/> Thanks!
+        <br/>
+        <br/>
+        <span id="hostName1">hostName</span>
+    </p>
+         <script>            
         var txt1 = document.getElementById("recipientName");
         var txt2 = document.getElementById("organizationName");
         var txt3 = document.getElementById("eventDate");
@@ -216,19 +228,6 @@ div.desc {
        btn.addEventListener('click', fill);
         
     </script>
-              
-    </section>
-
-    <article id="placeholderContent">
-        Hello <span id="recipientName1">recipientName</span>!
-        <br/>
-        <br/> You have been invited to volunteer for an event held by <span id="organizationName1">organizationName</span> on <span id="eventDate1">eventDate</span>. Please come to the following website: <span id="websiteUR1L">websiteURL</span> to sign up as a volunteer.
-        <br/>
-        <br/> Thanks!
-        <br/>
-        <br/>
-        <span id="hostName1">hostName</span>
-    </article>
     <footer>This events site is for IT-FP3215 tasks.
     </footer>
 </body>
