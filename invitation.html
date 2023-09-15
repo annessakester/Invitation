@@ -147,7 +147,6 @@ div.desc {
     text-align: center;
 }
     </style>
-    <script type= "text/javascript" src="JS/invitation.js"></script>
 </head>
 
 <body>
@@ -172,38 +171,63 @@ div.desc {
     <section id="pageForm">
         <form action="#">
             <label for="recipientName">Recipient name:</label>
-            <input type="text" name="recipientName" placeholder="Enter your Recipient Name" />
+            <input type="text" id="recipientName" placeholder="Enter your Recipient Name" />
 
             <label for="organizationName">Organization name:
             </label>
-            <input type="text" name="organizationName" placeholder="Enter your Organization Name" />
+            <input type="text" id="organizationName" placeholder="Enter your Organization Name" />
 
             <label for="eventDate">Event Date:
             </label>
-            <input type="text" name="eventDate" placeholder="Enter your Event Date" />
+            <input type="text" id="eventDate" placeholder="Enter your Event Date" />
 
             <label for="websiteURL">URL:
             </label>
-            <input type="text" name="websiteURL" placeholder="Enter your Website URL" />
+            <input type="text" id="websiteURL" placeholder="Enter your Website URL" />
 
             <label for="hostName">Host name:
             </label>
-            <input type="text" name="hostName" placeholder="Host Name" />
+            <input type="text" id="hostName" placeholder="Host Name" />
 
-            <input type="submit" value="Submit">
+            <input type="submit" id="btn" value="Submit">
         </form>
+        
+     <script>            
+        var txt1 = document.getElementById("recipientName");
+        var txt2 = document.getElementById("organizationName");
+        var txt3 = document.getElementById("eventDate");
+        var txt4 = document.getElementById("websiteURL");
+        var txt5 = document.getElementById("hostName");
+
+        var out1 = document.getElementById("recipientName1");
+        var out2 = document.getElementById("organizationName1");
+        var out3 = document.getElementById("eventDate1");
+        var out4 = document.getElementById("websiteURL1");
+        var out5 = document.getElementById("hostName1");
+        var btn = document.getElementById("btn");
+        
+         function fill() {
+            out1.innerHTML = txt1.value;
+            out2.innerHTML = txt2.value;
+            out3.innerHTML = txt3.value;
+            out4.innerHTML = txt4.value;
+            out5.innerHTML = txt5.value;
+         }    
+       btn.addEventListener('click', fill);
+        
+    </script>
+              
     </section>
 
-
     <article id="placeholderContent">
-        Hello <span id="recipientName">recipientName</span>!
+        Hello <span id="recipientName1">recipientName</span>!
         <br/>
-        <br/> You have been invited to volunteer for an event held by <span id="organizationName">organizationName</span> on <span id="eventDate">eventDate</span>. Please come to the following website: <span id="websiteURL">websiteURL</span> to sign up as a volunteer.
+        <br/> You have been invited to volunteer for an event held by <span id="organizationName1">organizationName</span> on <span id="eventDate1">eventDate</span>. Please come to the following website: <span id="websiteUR1L">websiteURL</span> to sign up as a volunteer.
         <br/>
         <br/> Thanks!
         <br/>
         <br/>
-        <span id="hostName">hostName</span>
+        <span id="hostName1">hostName</span>
     </article>
     <footer>This events site is for IT-FP3215 tasks.
     </footer>
