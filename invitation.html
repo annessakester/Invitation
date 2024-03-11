@@ -1,5 +1,5 @@
 <html lang="en-US">
-<head>
+    <head>
 <style>
     body {
     font: 15px arial, sans-serif;
@@ -143,7 +143,7 @@ div.desc {
     padding: 15px;
     text-align: center;
 }
-</style>
+</style>        
     <title>Invitation Page</title>
 </head>
 
@@ -158,6 +158,8 @@ div.desc {
                 </li>
                 <li><a href="invitation.html" class="active">Invitation</a>
                 </li>
+				<li><a href="volunteer.html">Volunteers</a>
+                </li>
                 <li><a href="gallery.html">Gallery</a>
                 </li>
                 <li><a href="registration.html">Registration</a>
@@ -169,66 +171,47 @@ div.desc {
     <section id="pageForm">
         <form action="#">
             <label for="recipientName">Recipient name:</label>
-            <input type="text" id="recipientName" placeholder="Enter your Recipient Name">
-
-            <label for="organizationName">Organization name:
-            </label>
-            <input type="text" id="organizationName" placeholder="Enter your Organization Name">
-
-            <label for="eventDate">Event Date:
-            </label>
-            <input type="text" id="eventDate" placeholder="Enter your Event Date">
-
-            <label for="websiteURL">URL:
-            </label>
-            <input type="text" id="websiteURL" placeholder="Enter your Website URL">
+            <input type="text" name="recipientNameInput" id="recipientNameInput" placeholder="Enter your Recipient Name">
 
             <label for="hostName">Host name:
             </label>
-            <input type="text" id="hostName" placeholder="Host Name">
+            <input type="text" name="hostNameInput" id="hostNameInput" placeholder="Enter your Name">
 
-            <input type="submit" id="btn" value="Submit">
+            <input type="submit" value="Submit" onclick="replaceContent();return false;">
         </form>
-              
     </section>
 
+
     <article id="placeholderContent">
-        Hello <span id="recipientName1">recipientName</span>!
+        Hello <span id="recipientNamePlaceholder">recipientName</span>!
         <br>
-        <br> You have been invited to volunteer for an event held by <span id="organizationName1">organizationName</span> on <span id="eventDate1">eventDate</span>. Please come to the following website: <span id="websiteURL1">websiteURL</span> to sign up as a volunteer.
+        <br> You have been invited to volunteer for an event held on July 1st. Please respond to this email to sign up as a volunteer.
         <br>
         <br> Thanks!
         <br>
         <br>
-        <span id="hostName1">hostName</span>
+        <span id="hostNamePlaceholder">hostName</span>
     </article>
-    
-         <script>            
-        var txt1 = document.getElementById("recipientName");
-        var txt2 = document.getElementById("organizationName");
-        var txt3 = document.getElementById("eventDate");
-        var txt4 = document.getElementById("websiteURL");
-        var txt5 = document.getElementById("hostName");
-
-        var out1 = document.getElementById("recipientName1");
-        var out2 = document.getElementById("organizationName1");
-        var out3 = document.getElementById("eventDate1");
-        var out4 = document.getElementById("websiteURL1");
-        var out5 = document.getElementById("hostName1");
-        var btn = document.getElementById("btn");
-        
-         function fill() {
-            out1.innerHTML = txt1.value;
-            out2.innerHTML = txt2.value;
-            out3.innerHTML = txt3.value;
-            out4.innerHTML = txt4.value;
-            out5.innerHTML = txt5.value;
-         }    
-       btn.addEventListener('click', fill);   
-    </script>
-    
-    <footer>This events site is for IT-FP3215 tasks.
+    <footer>This events site is for IT3515 tasks.
     </footer>
 
 
-</body></html>
+</body>
+
+</html>
+<script>
+    function replaceContent(){
+        var myRecipientName;
+        var myHostName;
+        
+    myRecipientNameName = document.getElementById("recipientNameInput").value;
+    myHostNamehostName = document.getElementById("hostNameInput").value;
+        
+    document.getElementById("recipientNamePlaceholder").innerHTML = myRecipientNameName;
+    document.getElementById("hostNamePlaceholder").innerHTML = myHostNamehostName;
+    }
+</script>
+    
+
+
+
