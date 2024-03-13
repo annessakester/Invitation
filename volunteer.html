@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US"><head>
+    <title>Invitation Page</title>
 <style>
-    body {
+body {
     font: 15px arial, sans-serif;
     color: #808080;
 }
@@ -121,7 +121,7 @@ footer {
     left: 0;
     padding: 1rem;
     background-color: #efefef;
-    text-align: center;
+    text-align: center
 }
 div.gallery {
     margin: 5px;
@@ -143,9 +143,8 @@ div.desc {
     padding: 15px;
     text-align: center;
 }
-</style>     
-<head>
-    <title>Invitation Page</title>
+    
+</style>   
 	<script type="text/javascript" src="js/volunteers.js"></script>
 </head>
 
@@ -158,7 +157,7 @@ div.desc {
             <ul class="topnav">
                 <li><a href="index.html">Home</a>
                 </li>
-                <li><a href="invitation.html" >Invitation</a>
+                <li><a href="invitation.html">Invitation</a>
                 </li>
 				<li><a href="volunteer.html" class="active">Volunteers</a>
                 </li>
@@ -197,8 +196,90 @@ div.desc {
 
 		</form>
 	</section>
+<script>  
+var $ = function (id) { return document.getElementById(id); };
+
+var volunteerArray = [];
+
+var displayVolunteers = function () {   
+    // display the volunteers in the text area
+    $("volunteerList").value = volunteerArray.join("\n");
+	// comment out the line above change this to a loop instead to loop through the array.
+    var volunteerList = "";
+    for (var i = 0; i < volunteerArray.length; i++) {
+        volunteerList += (i+1) + ". " + volunteerArray[i] + "\n";
+    }
+    $("volunteerList").value = volunteerList;
+};
+
+var addVolunteer = function () {
+    // get the data from the form
+    var volunteerString = $("first_name").value + " " + $("last_name").value;
+
+    // store the data in an array
+    volunteerArray.push(volunteerString);
+    
+    // display the volunteers and clear the add form
+    displayVolunteers();
+    
+    // get the add form ready for next entry
+    $("first_name").value = "";
+    $("last_name").value = "";
+    $("first_name").focus();
+};
+
+
+var deleteVolunteer = function () {
+    // get the data from the form
+    var volunteerString = $("first_name").value + " " + $("last_name").value;
+
+    // find the index of the volunteer in the array
+    var index = volunteerArray.indexOf(volunteerString);
+    
+    // remove the volunteer from the array if found
+    if (index !== -1) {
+        volunteerArray.splice(index, 1);
+    }
+    
+    // display the volunteers and clear the delete form
+    displayVolunteers();
+    $("first_name").value = "";
+    $("last_name").value = "";
+    $("first_name").focus();
+};
+
+var clearList = function () {   
+    // delete the data from the arrays
+    volunteerArray = [];
+    
+	//   alternative way to delete all of the data from the array
+	//    volunteerArray.length = 0;
+    
+    // remove the volunteers data from the web page
+    $("volunteerList").value = "";
+    
+    $("first_name").focus();
+};
+
+var sortList = function () {   
+    // sort the scores
+    volunteerArray.sort();
+    
+    // display the scores
+    displayVolunteers();    
+};
+
+//When the page is fully loaded, the buttons will be mapped to the JavaScript functions
+window.onload = function () {
+    $("add_button").onclick = addVolunteer;
+	$("delete_button").onclick = deleteVolunteer;
+    $("clear_button").onclick = clearList;    
+    $("sort_button").onclick = sortList;    
+    $("first_name").focus();
+};   
+</script>  
     <footer>This events site is for IT3515 tasks.
     </footer>
-</body>
 
-</html>
+
+</body></html>
